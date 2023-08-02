@@ -123,8 +123,12 @@ class DBMS
                 {
                     SelectFrom(Tokens[7]);
                 }
+
+                if(("select".equals(Tokens[0])) && "age".equals(Tokens[5]))
+                {
+                    SelectFrom(Tokens[7]);
+                }
             }
-            sobj.close();
         }    
     }
 
@@ -255,20 +259,44 @@ class DBMSSystem
     {
         DBMS obj = new DBMS();
         obj.StartDBMS();
+
     }
 }
 
 // Insert Query
 // Insert into student values Rahul 23 67
+//   0     1      2      3     4    5  6
+// No of tokens = 7
 
 // Select query 
 // select * from student
+//   0    1   2     3
+// No of tokens: 4
+
 // select * from student where rno = 4
+//   0    1   2    3       4    5  6 7
+// No of tokens: 8
+
 // select * from student where name = Rahul
+//   0    1   2    3       4    5   6  7
+// No of tokens: 8
 
 // select MAX(marks) from student
+//   0        1       2     3
+// No of tokens: 4
+
 // select MIN(marks) from student
+//   0        1       2     3
+// No of tokens: 4
+
 // select AVG(marks) from student
+//   0        1       2     3
+// No of tokens: 4
+
 // select SUM(marks) from student
+//   0        1       2     3
+// No of tokens: 4
 
 // delete from student where Rno = 2
+//   0      1     2     3     4  5 6
+// No of tokens = 7
